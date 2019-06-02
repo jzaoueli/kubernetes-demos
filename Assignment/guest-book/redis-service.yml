@@ -7,8 +7,8 @@ metadata:
     app: guest-book-app
 spec:
   ports:
-  - port: 6379
-    targetPort: 6379
+    - port: 6379
+      targetPort: 6379
   selector:
     name: redis-pod
     app: guest-book-app
