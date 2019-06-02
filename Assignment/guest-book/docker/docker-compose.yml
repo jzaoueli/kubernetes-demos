@@ -1,0 +1,15 @@
+version: '2'
+services:
+  redis:
+    container_name: redis
+    image: redis
+    ports:
+      - "6379:6379"
+
+  guestbook:
+    container_name: guestbook
+    ports:
+      - "8080:80"
+    image: gcr.io/google-samples/gb-frontend:v4
+    links:
+      - redis
