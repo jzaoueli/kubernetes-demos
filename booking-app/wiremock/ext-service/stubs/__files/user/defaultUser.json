@@ -1,0 +1,11 @@
+{
+  "id": 4,
+  "userName": "user",
+  "surname": "user",
+  "forename": "user",
+  "email": "user.user@web.de",
+  "phone": null,
+  "roles": [
+    "user"
+  ]
+}

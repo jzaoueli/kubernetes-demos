@@ -1,0 +1,21 @@
+version: '3'
+
+services:
+
+  booking-system-db:
+    container_name: booking-system-db
+    image: mariadb:10.4
+    command: mysqld --character-set-server=utf8
+    environment:
+      MYSQL_DATABASE: reservations
+      MYSQL_ROOT_PASSWORD: root
+    ports:
+      - "3306:3306"
+
+  ext-service-mock:
+    container_name: workforce-ext-mock-service
+    image: rodolpheche/wiremock
+    volumes:
+      - ./wiremock/ext-service/stubs:/home/wiremock
+    ports:
+      - "8081:8080"

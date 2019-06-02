@@ -1,0 +1,11 @@
+{
+  "id": 5,
+  "userName": "admin",
+  "surname": "admin",
+  "forename": "admin",
+  "email": "admin.admin@web.de",
+  "phone": null,
+  "roles": [
+    "admin"
+  ]
+}

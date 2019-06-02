@@ -1,0 +1,12 @@
+{
+  "id": 1,
+  "userName": "max",
+  "surname": "max",
+  "forename": "muster",
+  "email": "max.muster@web.de",
+  "phone": null,
+  "roles": [
+    "user",
+    "admin"
+  ]
+}
