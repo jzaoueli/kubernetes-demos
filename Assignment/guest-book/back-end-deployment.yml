@@ -3,19 +3,19 @@ kind: Deployment
 metadata:
   name: redis-deployment
   labels:
-    app: guest-book-app
+    app: guestbook-app
 spec:
-  replicas: 2
+  replicas: 1
   selector:
     matchLabels:
       name: redis-pod
-      app: guest-book-app
+      app: guestbook-app
   template:
     metadata:
       name: redis-pod
       labels:
         name: redis-pod
-        app: guest-book-app
+        app: guestbook-app
 
     spec:
       containers:
