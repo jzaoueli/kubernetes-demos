@@ -4,7 +4,6 @@ metadata:
   name: result-app-deployment
   labels:
     app: demo-voting-app
-
 spec:
   replicas: 1
   selector:
@@ -20,7 +19,7 @@ spec:
 
     spec:
       containers:
-        - name: result-app
-          image: dockersamples/examplevotingapp_result
-          ports:
-            - containerPort: 80
+      - name: result-app
+        image: dockersamples/examplevotingapp_result
+        ports:
+        - containerPort: 80
