@@ -1,0 +1,23 @@
+apiVersion: v1
+kind: ReplicationController
+metadata:
+  name: myapp-rc
+  labels:
+    app: mayapp
+    type: front-end
+spec:
+  template:
+    metadata:
+      name: myapp-pod
+      labels:
+        app: myapp
+        type: front-end
+    spec:
+      containers:
+        - name: nginx-container
+          image: nginx
+  replicas: 3
+
+# kubectl create -f rc-definition.yml -> to use this file
+# kubectl get replication controller -> To view the list of created replication controllers
+# kubectl get pods -> the pods that were created by the replication controller

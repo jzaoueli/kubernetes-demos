@@ -1,0 +1,29 @@
+version: '2'
+services:
+
+  redis:
+    container_name: redis
+    image: redis
+  db:
+    container_name: db
+    image: postgres:9.4
+  vote:
+    container_name: vote
+    ports:
+      - "5000:80"
+    image: dockersamples/examplevotingapp_vote
+    links:
+      - redis
+  result:
+    container_name: result
+    ports:
+      - "5001:80"
+    image: dockersamples/examplevotingapp_result
+    links:
+      - db
+  worker:
+    container_name: worker
+    image: dockersamples/examplevotingapp_worker
+    links:
+      - db
+      - redis

@@ -1,0 +1,18 @@
+# This is the version of the kubernetes API we’re using to create the object.
+apiVersion: v1
+# The kind refers to the type of object we are trying to create (Pod, ReplicaSet, Deployment or Service)
+kind: Pod
+# data about the object
+metadata:
+  name: myapp-pod
+  labels:
+    app: myapp
+    type: front-end
+# additional information to kubernetes pertaining to that object (Depending on the object to create)    
+spec:
+  containers:
+    - name: nginx-container
+      image: nginx
+
+# kubectl create -f pod-definition_template.yml -> to create the pod run
+# kubectl describe pod myapp-pod -> detailed information about the pod (when it was created, what labels are assigned to it, what docker containers are part of it and the events associated with that POD) 
