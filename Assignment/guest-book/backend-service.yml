@@ -4,11 +4,11 @@ metadata:
   name: redis
   labels:
     name: redis-service
-    app: guest-book-app
+    app: guestbook-app
 spec:
   ports:
     - port: 6379
       targetPort: 6379
   selector:
     name: redis-pod
-    app: guest-book-app
+    app: guestbook-app
