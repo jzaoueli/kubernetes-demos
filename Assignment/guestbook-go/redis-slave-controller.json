@@ -25,7 +25,7 @@
         "containers": [
           {
             "name": "redis-slave",
-            "image": "kubernetes/redis-slave:v2",
+            "image": "gcr.io/google_samples/gb-redisslave:v1",
             "ports": [
               {
                 "name": "redis-server",
