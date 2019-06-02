@@ -3,23 +3,23 @@ kind: Deployment
 metadata:
   name: redis-deployment
   labels:
-    app: guestbook-app
+    name: redis-deployment
+    app: assignment-app
 spec:
-  replicas: 3
-  selector:
-    matchLabels:
-      name: redis-pod
-      app: guestbook-app
   template:
     metadata:
       name: redis-pod
       labels:
         name: redis-pod
-        app: guestbook-app
-
+        app: assignment-app
     spec:
       containers:
         - name: redis
           image: redis
           ports:
             - containerPort: 6379
+  replicas: 3
+  selector:
+    matchLabels:
+      name: redis-pod
+      app: assignment-app

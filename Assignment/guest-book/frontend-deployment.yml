@@ -5,7 +5,7 @@ metadata:
   labels:
     app: guestbook-app
 spec:
-  replicas: 1
+  replicas: 3
   template:
     metadata:
       name: guestbook-app-pod
