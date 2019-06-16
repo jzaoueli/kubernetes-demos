@@ -23,3 +23,8 @@ spec:
         image: dockersamples/examplevotingapp_result
         ports:
         - containerPort: 80
+  strategy:
+    type: RollingUpdate
+    rollingUpdate:
+      maxSurge: 2        # pods we can add at a time
+      maxUnavailable: 0  # pods can be unavailable during the rolling update

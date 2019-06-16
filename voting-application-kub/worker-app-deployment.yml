@@ -5,7 +5,7 @@ metadata:
   labels:
     app: demo-voting-app
 spec:
-  replicas: 3
+  replicas: 2
   selector:
     matchLabels:
       name: worker-app-pod
@@ -21,3 +21,8 @@ spec:
       containers:
       - name: worker-app
         image: dockersamples/examplevotingapp_worker
+  strategy:
+    type: RollingUpdate
+    rollingUpdate:
+      maxSurge: 2        # how many pods we can add at a time
+      maxUnavailable: 0  # how many pods can be unavailable during the rolling update
